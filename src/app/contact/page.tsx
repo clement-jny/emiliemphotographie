@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div>
       <Image
-        src="/vercel.svg"
+        src="./vercel.svg"
         alt="Vercel Logo"
         className="dark:invert"
         width={100}
