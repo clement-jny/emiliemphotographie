@@ -7,13 +7,14 @@ const basePath = `/${githubRepo}`
 const nextConfig = {
   // Export settings for static site generation -> github pages
   output: 'export',
-  assetPrefix: assetPrefix,
-  basePath: basePath
+  // assetPrefix: assetPrefix,
+  // basePath: basePath
 
-  // images: {
-  //   loader: 'akamai',
-  //   path: '',
-  // },
+  images: {
+    loader: 'akamai',
+    path: '',
+  },
+  assetPrefix: './'
 }
 
 module.exports = nextConfig
