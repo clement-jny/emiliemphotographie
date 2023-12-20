@@ -8,7 +8,7 @@ const nextConfig = {
   //   path: '',
   // },
   // assetPrefix: './',
-  // basePath: '/emiliemphotographie'
+  basePath: '/emiliemphotographie'
 }
 
 module.exports = nextConfig
