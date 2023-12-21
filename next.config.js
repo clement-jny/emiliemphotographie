@@ -1,20 +1,14 @@
 /** @type {import('next').NextConfig} */
 
-const githubRepo = 'emiliemphotographie'
-const assetPrefix = `/${githubRepo}/`
-const basePath = `/${githubRepo}`
+// const githubRepo = 'emiliemphotographie'
+// const assetPrefix = `/${githubRepo}/`
+// const basePath = `/${githubRepo}`
 
 const nextConfig = {
   // Export settings for static site generation -> github pages
-  output: 'export',
+  // output: 'export',
   // assetPrefix: assetPrefix,
   // basePath: basePath
-
-  images: {
-    loader: 'akamai',
-    path: '',
-  },
-  assetPrefix: '/'
 }
 
 module.exports = nextConfig
