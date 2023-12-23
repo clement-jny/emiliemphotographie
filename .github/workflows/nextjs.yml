@@ -19,9 +19,9 @@ jobs:
       - name: Connect to debian & run docker
         uses: appleboy/ssh-action@v1.0.0
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
+          host: 10.211.55.6
+          username: 'parallels'
+          password: 'parallels'
           script: whoami
 
 # # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
