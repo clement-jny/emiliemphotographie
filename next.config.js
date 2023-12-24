@@ -6,7 +6,7 @@
 
 const nextConfig = {
   // Export settings for static site generation -> github pages
-  // output: 'export',
+  output: 'export',
   // assetPrefix: assetPrefix,
   // basePath: basePath
 }
