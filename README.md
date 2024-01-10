@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Start the docker container by typing
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+``` bash
+docker compose up -d --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Branch name convention
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Category
+  - **feature**: is for adding, refactoring or removing a feature
+  - **bugfix**: is for fixing a bug
+  - **hotfix**: is for changing code with a temporary solution and/or without following the usual process (usually because of an emergency)
+  - **test**: is for experimenting outside of an issue/ticket
+  - **docs**: is for writing, updating, or fixing documentation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Reference
 
-## Learn More
+After the category, there should be a "/" followed by the reference of the issue/ticket you are working on. If there's no reference, just add "no-ref".
 
-To learn more about Next.js, take a look at the following resources:
+### Description
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After the reference, there should be another "/" followed by a description which sums up the purpose of this specific branch. This description should be short and "kebab-cased".
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Examples:
+  - You need to add, refactor or remove a feature: **`git branch feature/issue-42/create-new-button-component`**
+  - You need to fix a bug: **`git branch bugfix/issue-342/button-overlap-form-on-mobile`**
+  - You need to fix a bug really fast (possibly with a temporary solution): **`git branch hotfix/no-ref/registration-form-not-working`**
+  - You need to experiment outside of an issue/ticket: **`git branch test/no-ref/refactor-components-with-atomic-design`**
+  - You need to update documentations **`git branch docs/no-ref/update-readme`**
 
-## Deploy on Vercel
+# Commit name convention
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Category
+  - **feat**: is for adding a new feature
+  - **fix**: is for fixing a bug
+  - **refactor**: is for changing code for peformance or convenience purpose (e.g. readibility)
+  - **chore**: is for everything else (writing documentation, formatting, adding tests, cleaning useless code etc.)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+After the category, there should be a ":" announcing the commit description.
+
+### Description
+
+After the colon, the commit description should consist in short statements describing the changes.
+
+Each statement should start with a verb conjugated in an imperative way. Statements should be seperated from themselves with a ";".
+
+### Examples:
+  - **`git commit -m 'feat: add new button component; add new button components to templates'`**
+  - **`git commit -m 'fix: add the stop directive to button component to prevent propagation'`**
+  - **`git commit -m 'refactor: rewrite button component in TypeScript'`**
+  - **`git commit -m 'chore: write button documentation'`**
+
+### Sources :
+- [dev.to](https://dev.to/varbsan/a-simplified-convention-for-naming-branches-and-commits-in-git-il4)
+- [medium.com](https://medium.com/@abhay.pixolo/naming-conventions-for-git-branches-a-cheatsheet-8549feca2534)
+
+
+<!-- # Branch Name Convention
+
+| Category  | Prefix     | Description Format                                      | Examples                                                                                           |
+|-----------|------------|---------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Feature   | feature    | `feature/issue-<reference>/<description>`               | `git branch feature/issue-42/create-new-button-component`                                          |
+| Bugfix    | bugfix     | `bugfix/issue-<reference>/<description>`                | `git branch bugfix/issue-342/button-overlap-form-on-mobile`                                        |
+| Hotfix    | hotfix     | `hotfix/no-ref/<description>`                           | `git branch hotfix/no-ref/registration-form-not-working`                                           |
+| Test      | test       | `test/no-ref/<description>`                             | `git branch test/no-ref/refactor-components-with-atomic-design`                                    |
+| Docs      | docs       | `docs/no-ref/<description>`                             | `git branch docs/no-ref/update-readme`                                                             |
+
+# Commit Name Convention
+
+| Category  | Prefix     | Description Format                                        | Examples                                                                                           |
+|-----------|------------|-----------------------------------------------------------|----------------------------------------------------------------------------------------------------|
+| Feature   | feat       | `feat: <imperative verb>; <additional statement>`         | `git commit -m 'feat: add new button component; add new button components to templates'`           |
+| Bugfix    | fix        | `fix: <imperative verb>; <additional statement>`          | `git commit -m 'fix: add the stop directive to button component to prevent propagation'`           |
+| Refactor  | refactor   | `refactor: <imperative verb>; <additional statement>`     | `git commit -m 'refactor: rewrite button component in TypeScript'`                                 |
+| Chore     | chore      | `chore: <imperative verb>; <additional statement>`        | `git commit -m 'chore: write button documentation'`                                                | -->
