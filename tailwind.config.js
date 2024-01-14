@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     extend: {
+      backgroundImage: {
+        image: "url('/i20n.jpg')"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
