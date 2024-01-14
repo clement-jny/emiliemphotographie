@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+// import { Separator } from '@/components/ui/separator';
 
 import {
   Carousel,
@@ -32,7 +32,7 @@ export default function Landing() {
         <Button variant='ghost'>Contact</Button>
       </div> */}
 
-	  <Separator />
+      {/* <Separator /> */}
 
       <Carousel className="w-full max-w-xs">
         <CarouselContent>
