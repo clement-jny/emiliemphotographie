@@ -1,0 +1,40 @@
+name: Dev branch workflow - Test and check thing
+
+on:
+  # Runs on opened pull request targeting the dev branch
+  # When I want to merge feature branch into dev branch
+  pull_request:
+    types:
+      - opened
+    branches:
+      - dev
+  
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Allows this workflow to be called from another one
+  workflow_call:
+
+jobs:
+  # Testing jobs in dev branch
+  test_dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      # - name: Checkout code
+      #   uses: actions/checkout@v4.1.1
+
+      # - name: Setup Node
+      #   uses: actions/setup-node@v4.0.1
+      #   with:
+      #     node-version: 20.10.0
+      #     cache: npm
+
+      # - name: Install dependencies
+      #   run: npm ci
+
+      # - name: Run project
+      #   run: npm run dev
+
+      - name: Run e2e/unit/component test
+        run: echo "Hello all tests"
