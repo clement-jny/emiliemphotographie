@@ -1,60 +1,30 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+import { BackgroundImageSlider } from '@/components/backgroundImageSlider';
 
 export default function Landing() {
   return (
-    <main className='h-screen flex flex-col justify-center items-center bg-no-repeat bg-center bg-cover'>
-      <h1 className='text-8xl mb-10'>Emilie.M Photographie</h1>
-      {/* <Image src='/signature.png' alt='Signature' width={3000} height={2000} /> */}
+    <main className='h-screen flex flex-col justify-center items-center text-white'>
+      <BackgroundImageSlider />
 
-      {/* <div className='flex justify-between'>
-        <Button variant='ghost'>Portfolio</Button>
+      <h1 id='title' className='text-8xl mb-10 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>EmilieM Photographie</h1>
 
-        
-        <Button variant='ghost'>À propos</Button>
+      <div className='flex'>
+        <Button variant='link' className='text-white'>Portfolio</Button>
 
-        <Separator />
+        <Separator orientation='vertical' className='mx-2' />
 
-        <Button variant='ghost'>Tarif</Button>
+        <Button variant='link' className='text-white'>À propos</Button>
 
-        <Separator />
+        <Separator orientation='vertical' className='mx-2' />
 
-        <Button variant='ghost'>Contact</Button>
-      </div> */}
+        <Button variant='link' className='text-white'>Tarif</Button>
 
+        <Separator orientation='vertical' className='mx-2' />
 
-      <Separator orientation='vertical' />
-      <Separator />
-
-
-      <Carousel className="w-full max-w-xs">
-        <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
-            <CarouselItem key={index}>
-              <div className="p-1">
-
-                <Image src={'/i20n.jpg'} alt='Voiture' height={500} width={300} />
-
-
-                <span className="text-4xl font-semibold">{index + 1}</span>
-
-
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
-    </main >
+        <Button variant='link' className='text-white'>Contact</Button>
+      </div>
+    </main>
   )
 }
