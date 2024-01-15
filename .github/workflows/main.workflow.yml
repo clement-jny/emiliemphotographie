@@ -18,4 +18,4 @@ jobs:
     runs-on: ubuntu-latest
 
     - name: Call dev workflow
-      uses: ./dev.workflow.yml
+      uses: ./.github/workflows/dev.workflow.yml
