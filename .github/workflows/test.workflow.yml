@@ -1,4 +1,4 @@
-name: Test reusable workflow
+name: Testing reusable workflow
 
 on:
   # Allows this workflow to be called from another one
@@ -6,7 +6,7 @@ on:
 
 jobs:
   # Testing jobs
-  test_reuse_job:
+  testing_reuse_job:
     runs-on: ubuntu-latest
 
     steps:

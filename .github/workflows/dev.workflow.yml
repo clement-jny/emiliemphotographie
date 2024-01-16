@@ -8,9 +8,6 @@ on:
       - opened
     branches:
       - dev
-  # push:
-  #   branches:
-  #     - dev
   
   # Allows to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,6 +18,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Call test workflow
-        # uses: ./.github/workflows/test.workflow.yml
-        run: echo "test_dev_job"
+      - name: Call testing reusable workflow
+        uses: ./test.workflow.yml
