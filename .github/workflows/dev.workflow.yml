@@ -15,5 +15,4 @@ on:
 jobs:
   # Testing jobs in dev branch
   test_dev_job:
-    - name: Call testing reusable workflow
-      uses: ./.github/workflows/test.workflow.yml
+    uses: ./.github/workflows/test.workflow.yml
