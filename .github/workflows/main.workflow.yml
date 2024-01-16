@@ -14,5 +14,5 @@ on:
 
 jobs:
   # Testing jobs in main branch
-  test_main_job:
+  test_job:
     uses: ./.github/workflows/test.workflow.yml

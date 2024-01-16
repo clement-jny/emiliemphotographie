@@ -6,7 +6,7 @@ on:
 
 jobs:
   # Testing jobs
-  testing_reuse_job:
+  test_job:
     runs-on: ubuntu-latest
 
     steps:
