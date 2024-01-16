@@ -15,7 +15,5 @@ on:
 jobs:
   # Testing jobs in main branch
   test_main:
-    runs-on: ubuntu-latest
-
     - name: Call dev workflow
       uses: ./.github/workflows/dev.workflow.yml
