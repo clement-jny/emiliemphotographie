@@ -3,9 +3,12 @@ name: Main branch workflow - Test and check thing
 on:
   # Runs on opened pull request targeting the main branch
   # When I want to merge dev branch into main branch
-  pull_request:
-    types:
-      - opened
+  # pull_request:
+  #   types:
+  #     - opened
+  #   branches:
+  #     - main
+  push:
     branches:
       - main
 

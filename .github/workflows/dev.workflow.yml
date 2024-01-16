@@ -3,9 +3,12 @@ name: Dev branch workflow - Test and check thing
 on:
   # Runs on opened pull request targeting the dev branch
   # When I want to merge feature branch into dev branch
-  pull_request:
-    types:
-      - opened
+  # pull_request:
+  #   types:
+  #     - opened
+  #   branches:
+  #     - dev
+  push:
     branches:
       - dev
   
@@ -15,6 +18,7 @@ on:
 jobs:
   # Testing jobs in dev branch
   test_dev:
+
     - name: Call test workflow
       # uses: ./.github/workflows/test.workflow.yml
       run: echo "test_dev"
