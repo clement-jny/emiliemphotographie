@@ -18,8 +18,7 @@ on:
 jobs:
   # Testing jobs in main branch
   test_main:
-    - name: Call dev workflow
-      # uses: ./.github/workflows/dev.workflow.yml
-      run: echo "test_main"
-
-#comment
+    steps:
+      - name: Call dev workflow
+        # uses: ./.github/workflows/dev.workflow.yml
+        run: echo "test_main"
