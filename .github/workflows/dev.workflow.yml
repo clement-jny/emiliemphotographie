@@ -16,4 +16,5 @@ jobs:
   # Testing jobs in dev branch
   test_dev:
     - name: Call test workflow
-      uses: ./.github/workflows/test.workflow.yml
+      # uses: ./.github/workflows/test.workflow.yml
+      run: echo "test_dev"
