@@ -17,8 +17,10 @@ on:
 
 jobs:
   # Testing jobs in dev branch
-  test_dev:
+  test_dev_job:
+    runs-on: ubuntu-latest
+
     steps:
       - name: Call test workflow
         # uses: ./.github/workflows/test.workflow.yml
-        run: echo "test_dev"
+        run: echo "test_dev_job"
