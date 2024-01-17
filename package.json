@@ -7,7 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test-ct": "playwright test -c playwright-ct.config.ts"
+
+    "test": "concurrently \"npm:test:*(!ui)\"",
+    "test:ui": "concurrently -k npm:test:*:ui",
+
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+
+    "test:ct": "playwright test -c playwright-ct.config.ts",
+    "test:ct:ui": "playwright test -c playwright-ct.config.ts --ui"
   },
   "dependencies": {
     "@radix-ui/react-separator": "^1.0.3",
