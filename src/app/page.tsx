@@ -8,7 +8,7 @@ export default function Landing() {
     <main className='h-screen flex flex-col justify-center items-center text-white'>
       <BackgroundImageSlider />
 
-      <h1 id='title' className='text-8xl mb-10 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>EmilieM Photographie</h1>
+      <h1 data-testid="title" className='text-8xl mb-10 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text text-transparent'>EmilieM Photographie</h1>
 
       <div className='flex'>
         <Button variant='link' className='text-white'>Portfolio</Button>
