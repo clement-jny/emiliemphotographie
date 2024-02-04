@@ -29,7 +29,12 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html', { open: 'never', outputFolder: './playwright/.reports/component' }]],
+  reporter: [
+    [
+      'html',
+      { open: 'never', outputFolder: './playwright/.reports/component' },
+    ],
+  ],
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
@@ -45,10 +50,10 @@ export default defineConfig({
     ctViteConfig: {
       resolve: {
         alias: {
-          "@": resolve(__dirname, "./src"),
-        }
-      }
-    }
+          '@': resolve(__dirname, './src'),
+        },
+      },
+    },
   },
 
   /* Configure projects for major browsers */
