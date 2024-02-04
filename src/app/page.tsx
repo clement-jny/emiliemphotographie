@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { BackgroundImageSlider } from '@/components/backgroundImageSlider';
@@ -6,8 +5,6 @@ import { BackgroundImageSlider } from '@/components/backgroundImageSlider';
 export default function LandingPage() {
   return (
     <main className='flex h-screen flex-col items-center justify-center text-white'>
-      <a href='#top'>Click here</a>
-      <Image alt='A cat' src='.' />
       <BackgroundImageSlider />
 
       <h1
