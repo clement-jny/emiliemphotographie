@@ -1,9 +1,9 @@
 'use client';
 
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
-export const BackgroundImageSlider = () => {
+const BackgroundImageSlider = () => {
   const images = [
     '/background/bg-1.jpg',
     '/background/bg-2.jpg',
@@ -22,13 +22,14 @@ export const BackgroundImageSlider = () => {
     return () => clearInterval(myInterval);
   }, [images.length]);
 
-
   return (
     <Image
       src={images[imageIndex]}
       fill={true}
-      alt={"Background Image"}
-      className='-z-10 brightness-75 blur-sm'
+      alt={'Background Image'}
+      className='-z-10 blur-sm brightness-75'
     />
   );
 };
+
+export { BackgroundImageSlider };
