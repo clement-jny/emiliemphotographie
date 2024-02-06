@@ -27,7 +27,7 @@ const BackgroundImageSlider = () => {
       src={images[imageIndex]}
       fill={true}
       alt={'Background Image'}
-      className='-z-10 blur-sm brightness-75'
+      className='-z-10'
     />
   );
 };

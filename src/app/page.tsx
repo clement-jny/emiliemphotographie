@@ -7,9 +7,7 @@ export default function LandingPage() {
     <main className='flex h-screen flex-col items-center justify-center text-white'>
       <BackgroundImageSlider />
 
-      <h1
-        data-testid='title'
-        className='mb-10 bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text p-3 text-8xl text-transparent'>
+      <h1 data-testid='title' className='mb-10 text-8xl'>
         EmilieM Photographie
       </h1>
 
