@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
-const BackgroundImageSlider = () => {
+export const BackgroundImageSlider = () => {
   const images = [
     '/background/bg-1.jpg',
     '/background/bg-2.jpg',
@@ -31,5 +31,3 @@ const BackgroundImageSlider = () => {
     />
   );
 };
-
-export { BackgroundImageSlider };

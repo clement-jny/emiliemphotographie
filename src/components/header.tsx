@@ -4,6 +4,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from './ui/button';
+import { ThemeToggle } from './themeToggle';
+import { BackToTop } from './backToTop';
 // import { RouteLink } from '@/ts/types/link.types';
 
 // export type RouteLink = {
@@ -22,16 +24,8 @@ export const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className='flex h-16 items-center justify-center bg-white text-black'>
-      <nav>
-        {/* <Image
-          src='/me.svg'
-          alt='logo'
-          width='150'
-          height='150'
-          priority={true}
-        /> */}
-
+    <header className='h-20'>
+      <nav className='m-4 flex content-center justify-center'>
         <div className='flex'>
           <Button
             variant='link'
@@ -47,7 +41,16 @@ export const Header = () => {
             <Link href='/a-propos'>À propos</Link>
           </Button>
 
-          <h1 className='mx-3 text-2xl'>EmilieM Photographie</h1>
+          <h1 id='top' className='mx-3 text-2xl'>
+            EmilieM Photographie
+          </h1>
+          {/* <Image
+            src='/me.svg'
+            alt='Signature EmilieM Photographie'
+            width='300'
+            height='200'
+            priority={true}
+          /> */}
 
           <Button
             variant='link'
@@ -62,6 +65,10 @@ export const Header = () => {
             asChild>
             <Link href='/contact'>Contact</Link>
           </Button>
+
+          <ThemeToggle />
+
+          <BackToTop />
         </div>
 
         {/* <div className='flex'>

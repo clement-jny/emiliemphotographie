@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Milonga } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/header';
+import { ThemeProvider } from '@/components/themeProvider';
 
 const inter = Milonga({ weight: ['400'], subsets: ['latin'] });
 
@@ -15,8 +16,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang='fr'>
       <body className={inter.className}>
-        <Header />
-        {children}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
