@@ -26,9 +26,12 @@ export const Header = () => {
     <header className='h-20'>
       <nav className='m-4 flex content-center justify-between'>
         <div>
-          <h1 id='top' className='mx-3 text-2xl'>
+          {/* <h1 className='mx-3 text-2xl'>
             EmilieM Photographie
-          </h1>
+          </h1> */}
+          <Button variant='link' asChild>
+            <Link href='/'>EmilieM Photographie</Link>
+          </Button>
           {/* <Image
             src='/me.svg'
             alt='Signature EmilieM Photographie'
