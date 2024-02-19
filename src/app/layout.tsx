@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Milonga } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/header';
-import { ThemeProvider } from '@/components/themeProvider';
+import { ThemeProvider } from '@/components/theme-provider';
+import { BackToTop } from '@/components/back-to-top';
 
 const inter = Milonga({ weight: ['400'], subsets: ['latin'] });
 
@@ -23,6 +24,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           disableTransitionOnChange>
           <Header />
           {children}
+
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>
