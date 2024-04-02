@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='fr'>
+    <html lang='fr' className='scroll-smooth'>
       <body className={milonga.className}>
         <ThemeProvider
           attribute='class'
