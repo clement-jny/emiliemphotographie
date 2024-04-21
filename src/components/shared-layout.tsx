@@ -9,6 +9,10 @@ const SharedLayout = ({ children }: { children: ReactNode }) => {
       {children}
 
       <BackToTop />
+
+      <footer className='w-[95%] border-t-2 text-center'>
+        <p>Footer</p>
+      </footer>
     </>
   );
 };

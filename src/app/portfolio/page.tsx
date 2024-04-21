@@ -1,94 +1,120 @@
 'use client';
 
 import SharedLayout from '@/components/shared-layout';
+
 import { Button } from '@/components/ui/button';
-// import { Button } from '@/components/ui/button';
 // import Image from 'next/image';
+
 import Link from 'next/link';
-import { usePathname, useSearchParams, useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+import { usePathname } from 'next/navigation';
+// import { ThemeToggle } from '@/components/theme-toggle';
+// import { ChevronDownIcon, ChevronLeft, SearchIcon } from 'lucide-react';
+
+// import SharedLayout from '@/components/shared-layout';
+
+interface Artwork {
+  artist: string;
+  art: string;
+}
+
+const works: Artwork[] = [
+  {
+    artist: 'Ornella Binni',
+    art: 'https://images.unsplash.com/photo-1465869185982-5a1a7522cbcb?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    artist: 'Tom Byrom',
+    art: 'https://images.unsplash.com/photo-1548516173-3cabfa4607e9?auto=format&fit=crop&w=300&q=80',
+  },
+  {
+    artist: 'Vladimir Malyavko',
+    art: 'https://images.unsplash.com/photo-1494337480532-3725c85fd2ab?auto=format&fit=crop&w=300&q=80',
+  },
+];
 
 const PortfolioPage = () => {
   const pathname = usePathname();
-  const { getAll } = useSearchParams();
-  const {} = useRouter();
 
-  console.log('pathname', pathname);
-  console.log('searchParams', getAll);
+  const activeSection = useRef('animaux-anchor');
+  //   const [activeSection, setActiveSection] = useState('');
+
+  //   useEffect(() => {
+  // const handleScroll = () => {
+  //   const header = document.getElementById('myHeader');
+  //   const sticky = header!.offsetTop;
+  //   if (window.pageYOffset > sticky) {
+  //     header!.classList.add('sticky');
+  //   } else {
+  //     header!.classList.remove('sticky');
+  //   }
+  //   console.log('activeSection.current : ' + activeSection.current);
+  //   const pSection = document.getElementById('portrait-section');
+  //   const pTitle = document.getElementById('portrait-anchor');
+  //   if (pSection !== null && pTitle !== null) {
+  //     // console.log('pSection.offsetTop : ' + pSection.offsetTop);
+  //     console.log('pSection.offsetHeight : ' + pSection.offsetHeight);
+  //     console.log('window.scrollY : ' + window.scrollY);
+  //     console.log('pTitle.offsetTop : ' + pTitle.offsetTop);
+  //     console.log('pTitle.offsetHeight : ' + pTitle.offsetHeight);
+  //     if (pTitle.offsetTop + pTitle.offsetHeight === pSection.offsetHeight) {
+  //       console.log('end of section');
+  //       activeSection.current = 'animaux-anchor';
+  //     }
+  //   }
+  //       const sections = document.querySelectorAll(
+  //         '#portrait-anchor, #animaux-anchor, #mariage-anchor, #divers-anchor',
+  //       );
+  //       console.log(sections);
+  //       setActiveSection('');
+  //       const scrollPosition = window.scrollY + 250;
+  //       sections.forEach((section) => {
+  //         const sectionTop = section.offsetTop;
+  //         const sectionHeight = section.offsetHeight;
+  //         if (
+  //           scrollPosition >= sectionTop &&
+  //           scrollPosition <= sectionTop + sectionHeight
+  //         ) {
+  //           setActiveSection('portrait-anchor');
+  //         }
+  //       });
+  // };
+  // window.addEventListener('scroll', handleScroll);
+  // return () => {
+  //   window.removeEventListener('scroll', handleScroll);
+  // };
+  //   }, []);
 
   return (
     <SharedLayout>
-      {/* <nav className='relative w-full border-2 border-black'>
-        <div className='fixed flex'>
-          <Button
-            variant='link'
-            // className={`${pathname === '/portfolio' ? 'underline' : ''}`}
-            asChild>
-            <Link href='#'>Portrait</Link>
+      <div className='sticky top-20 z-50 flex h-20 items-center justify-center gap-5 bg-purple-600'>
+        <nav>
+          <Button variant='link' asChild>
+            <Link href='#portrait'>Portrait</Link>
           </Button>
 
-          <Button
-            variant='link'
-            // className={`${pathname === '/a-propos' ? 'underline' : ''}`}
-            asChild>
-            <Link href='#'>Animaux</Link>
+          <Button variant='link' asChild>
+            <Link href='#animaux'>Animaux</Link>
           </Button>
-
-          <Button
-            variant='link'
-            // className={`${pathname === '/tarif' ? 'underline' : ''}`}
-            asChild>
-            <Link href='#'>Mariage</Link>
+          <Button variant='link' asChild>
+            <Link href='#mariage'>Mariage</Link>
           </Button>
-
-          <Button
-            variant='link'
-            // className={`${pathname === '/contact' ? 'underline' : ''}`}
-            asChild>
-            <Link href='#'>Divers</Link>
+          <Button variant='link' asChild>
+            <Link href='#divers'>Divers</Link>
           </Button>
-        </div>
-      </nav> */}
+        </nav>
+      </div>
 
-      <main className='relative flex flex-col items-center justify-center'>
-        <aside className='fixed left-0 top-10 h-screen w-1/4 bg-gray-200'>
-          <nav>
-            <ul>
-              <li>
-                <Button variant='link' asChild>
-                  <Link href='#portrait-anchor'>Portrait</Link>
-                </Button>
-              </li>
-              <li>
-                <Button variant='link' asChild>
-                  <Link href='#animaux-anchor'>Animaux</Link>
-                </Button>
-              </li>
-              <li>
-                <Button variant='link' asChild>
-                  <Link href='#mariage-anchor'>Mariage</Link>
-                </Button>
-              </li>
-              <li>
-                <Button variant='link' asChild>
-                  <Link href='#divers-anchor'>Divers</Link>
-                </Button>
-              </li>
-            </ul>
-          </nav>
-        </aside>
-
-        <section className='flex flex-col items-center justify-center'>
+      <main>
+        <section
+          id='portrait'
+          className='flex flex-col items-center justify-center bg-red-300'>
           <div>
-            <h1 id='portrait-anchor' className='sticky top-0 text-8xl'>
-              Portrait
-            </h1>
+            <h1 className='sticky top-0 text-8xl'>Portrait</h1>
             <div>
               <div>
                 <strong>Andrew Alfred</strong>
               </div>
-              <div>
-                <strong>Aisha Houston</strong>
-              </div>
               <p className='h-14'>Some content</p>
               <p>Some content</p>
               <p>Some content</p>
@@ -124,11 +150,11 @@ const PortfolioPage = () => {
           </div>
         </section>
 
-        <section className='flex flex-col items-center justify-center'>
+        <section
+          id='animaux'
+          className='flex flex-col items-center justify-center bg-blue-300'>
           <div>
-            <h1 id='animaux-anchor' className='sticky top-0 text-8xl'>
-              Animaux
-            </h1>
+            <h1 className='sticky top-0 text-8xl'>Animaux</h1>
             <div>
               <div>
                 <strong>Bob Alfred</strong>
@@ -168,11 +194,11 @@ const PortfolioPage = () => {
           </div>
         </section>
 
-        <section className='flex flex-col items-center justify-center'>
+        <section
+          id='mariage'
+          className='flex flex-col items-center justify-center bg-green-300'>
           <div>
-            <h1 id='mariage-anchor' className='sticky top-0 text-8xl'>
-              Mariage
-            </h1>
+            <h1 className='sticky top-0 text-8xl'>Mariage</h1>
             <div>
               <div>
                 <strong>Bob Alfred</strong>
@@ -212,11 +238,11 @@ const PortfolioPage = () => {
           </div>
         </section>
 
-        <section className='flex flex-col items-center justify-center'>
+        <section
+          id='divers'
+          className='flex flex-col items-center justify-center bg-yellow-300'>
           <div>
-            <h1 id='divers-anchor' className='sticky top-0 text-8xl'>
-              Divers
-            </h1>
+            <h1 className='sticky top-0 text-8xl'>Divers</h1>
             <div>
               <div>
                 <strong>Bob Alfred</strong>
@@ -252,37 +278,9 @@ const PortfolioPage = () => {
               <p>Some content</p>
               <p>Some content</p>
               <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
             </div>
           </div>
         </section>
-
-        {/* <div className='relative'>
-          <div className='fixed inset-x-0 top-0'>Contacts</div>
-          <div>
-            <div>
-              <strong>Andrew Alfred</strong>
-            </div>
-            <div>
-              <strong>Debra Houston</strong>
-            </div>
-          </div>
-        </div> */}
       </main>
     </SharedLayout>
   );
