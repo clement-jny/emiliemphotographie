@@ -1,3 +1,5 @@
+'use client';
+
 // import Image from 'next/image';
 // import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -7,6 +9,7 @@ import { Button } from './ui/button';
 
 import Link from 'next/link';
 import { ThemeToggle } from './theme-toggle';
+import { useEffect } from 'react';
 
 // import { ThemeToggle } from './theme-toggle';
 // import { Button } from './ui/button';
@@ -38,8 +41,30 @@ import { ThemeToggle } from './theme-toggle';
 export const Header = () => {
   const pathname = usePathname();
 
+  useEffect(() => {
+    let prevScrollpos = window.pageYOffset;
+
+    window.onscroll = function () {
+      const currentScrollPos = window.pageYOffset;
+
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById('navbar')!.style.top = '0';
+      } else {
+        document.getElementById('navbar')!.style.top = '-50px';
+      }
+
+      prevScrollpos = currentScrollPos;
+
+      //   console.log('scroll 11111');
+    };
+    // console.log('scroll');
+  }, []);
+
   return (
-    <div className='sticky top-0 z-50 flex h-20 items-center justify-center bg-purple-400'>
+    <div
+      id='navbar'
+      className='fixed top-0 z-50 flex h-20 w-full items-center justify-center bg-purple-400'
+      style={{ transition: 'top 0.3s' }}>
       <nav className='flex items-center justify-center gap-5'>
         <div className='flex gap-3'>
           <Button
@@ -89,6 +114,6 @@ export const Header = () => {
 
 // 2 links - gros titre - 2 links
 
-// quand scroll down scale down du header
+// quand scroll down scale du header
 
 // quand mobile que titre et hamburger menu avec les liens

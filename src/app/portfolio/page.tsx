@@ -85,9 +85,107 @@ const PortfolioPage = () => {
   // };
   //   }, []);
 
+  //   useEffect(() => {
+  // console.log(window.location.href.split('#'));
+
+  //     // When the user scrolls down 50px from the top of the document, resize the header's font size
+  //     window.onscroll = function () {
+  //       scrollFunction();
+  //     };
+
+  //     function scrollFunction() {
+  //       if (
+  //         document.body.scrollTop > 50 ||
+  //         document.documentElement.scrollTop > 50
+  //       ) {
+  //         document.getElementById('header')!.style.fontSize = '30px';
+  //       } else {
+  //         document.getElementById('header')!.style.fontSize = '90px';
+  //       }
+  //     }
+  //   }, []);
+
+  //   const [scrollY, setScrollY] = useState(0);
+
+  //   useEffect(() => {
+  //     const handleScroll = () => {
+  //       setScrollY(window.scrollY);
+  //     };
+
+  //     window.addEventListener('scroll', handleScroll);
+
+  //     let prevScrollpos = window.pageYOffset;
+
+  //     window.onscroll = function () {
+  //       const currentScrollPos = window.pageYOffset;
+
+  //       if (prevScrollpos > currentScrollPos) {
+  //         document.getElementById('navbar')!.style.top = '0';
+  //         document.getElementById('navbar')!.classList.add('static');
+  //       } else {
+  //         document.getElementById('navbar')!.style.top = '-80px';
+  //         document.getElementById('navbar')!.classList.add('static');
+  //       }
+
+  //       prevScrollpos = currentScrollPos;
+  //     };
+
+  //     return () => {
+  //       window.removeEventListener('scroll', handleScroll);
+  //     };
+
+  //     // console.log('scroll');
+  //   }, []);
+
   return (
-    <SharedLayout>
-      <div className='sticky top-20 z-50 flex h-20 items-center justify-center gap-5 bg-purple-600'>
+    <>
+      <div
+        id='navbar'
+        className={`top-0 z-50 flex h-20 w-full items-center justify-center bg-purple-400`}
+        style={{ transition: 'top 0.3s' }}>
+        <nav className='flex items-center justify-center gap-5'>
+          <div className='flex gap-3'>
+            <Button
+              variant='link'
+              className={`${pathname === '/portfolio' ? 'underline' : ''}`}
+              asChild>
+              <Link href='/portfolio'>Portfolio</Link>
+            </Button>
+
+            <Button
+              variant='link'
+              className={`${pathname === '/a-propos' ? 'underline' : ''}`}
+              asChild>
+              <Link href='/a-propos'>À propos</Link>
+            </Button>
+          </div>
+
+          <div>
+            <Button variant='link' className='mx-3 text-5xl' asChild>
+              <Link href='/'>EmilieM Photographie</Link>
+            </Button>
+          </div>
+
+          <div className='flex gap-3'>
+            <Button
+              variant='link'
+              className={`${pathname === '/tarif' ? 'underline' : ''}`}
+              asChild>
+              <Link href='/tarif'>Tarif</Link>
+            </Button>
+
+            <Button
+              variant='link'
+              className={`${pathname === '/contact' ? 'underline' : ''}`}
+              asChild>
+              <Link href='/contact'>Contact</Link>
+            </Button>
+          </div>
+        </nav>
+      </div>
+
+      <div
+        className={` top-0 z-50 flex h-12 items-center justify-center gap-5 border-b border-border/40 bg-background/95 backdrop-blur ${scrollY > 0 ? 'top-20' : ''}`}>
         <nav>
           <Button variant='link' asChild>
             <Link href='#portrait'>Portrait</Link>
@@ -104,6 +202,82 @@ const PortfolioPage = () => {
           </Button>
         </nav>
       </div>
+
+      {/* <div
+        style={{
+          padding: '15px 15px 2500px',
+          fontSize: '30px',
+          marginTop: '30px',
+        }}>
+        <p>
+          <b>
+            This example demonstrates how to hide a navbar when the user starts
+            to scroll the page.
+          </b>
+        </p>
+        <p>Scroll down this frame to see the effect!</p>
+        <p>Scroll up to show the navbar.</p>
+        <p>
+          Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+          ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+          ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div> */}
+
+      {/* <div
+        id='header'
+        style={{
+          backgroundColor: '#f1f1f1',
+          padding: '50px 10px',
+          color: 'black',
+          textAlign: 'center',
+          fontSize: '90px',
+          fontWeight: 'bold',
+          position: 'sticky',
+          top: '120px',
+          width: '100%',
+          transition: '0.2s',
+        }}>
+        Header
+      </div>
+
+      <div
+        style={{
+          marginTop: '200px',
+          padding: '15px 15px 2500px',
+          fontSize: '30px',
+        }}>
+        <p>
+          <b>
+            This example demonstrates how to shrink a header when the user
+            starts to scroll the page.
+          </b>
+        </p>
+        <p>Scroll down this frame to see the effect!</p>
+        <p>Scroll to the top to remove the effect.</p>
+        <p>
+          Lorem ipsum dolor dummy text sit amet, consectetur adipiscing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+          ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div> */}
 
       <main>
         <section
@@ -282,7 +456,7 @@ const PortfolioPage = () => {
           </div>
         </section>
       </main>
-    </SharedLayout>
+    </>
   );
 };
 
