@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Header } from './header';
 import { BackToTop } from './back-to-top';
 
-const SharedLayout = ({ children }: { children: ReactNode }) => {
+export const SharedLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
@@ -16,5 +16,3 @@ const SharedLayout = ({ children }: { children: ReactNode }) => {
     </>
   );
 };
-
-export default SharedLayout;

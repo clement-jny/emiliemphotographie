@@ -1,0 +1,35 @@
+# Base image
+FROM node:lts-slim AS base
+
+WORKDIR /ckd-stock
+
+COPY package*.json .
+
+RUN npm ci
+
+COPY . .
+
+
+# For dev environment
+FROM base AS dev
+
+EXPOSE 3000
+
+CMD ["npm", "run", "dev"]
+
+
+# Build for prod
+FROM base AS build
+
+RUN npm run build
+
+# For prod environment
+FROM base AS prod
+
+COPY --from=build /ckd-stock/package.json .
+COPY --from=build /ckd-stock/.next ./.next
+COPY --from=build /ckd-stock/public ./public
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
