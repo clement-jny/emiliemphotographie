@@ -26,9 +26,9 @@ export const GallerySection = ({ side, text, theme }: GallerySectionProps) => {
             </h1>
 
             <div className='w-[50%] text-center'>
-              {/* <div>
-					<strong>{text}</strong>
-				</div> */}
+              <div>
+                <strong>{text}</strong>
+              </div>
               <p className='h-14'>Some content</p>
               <p>Some content</p>
               <p>Some content</p>
@@ -110,3 +110,181 @@ export const GallerySection = ({ side, text, theme }: GallerySectionProps) => {
     </section>
   );
 };
+
+{
+  /* <section
+          id='portrait'
+          className='flex flex-col items-center justify-center bg-red-300'>
+          <div>
+            <h1 className='sticky top-0 text-8xl'>Portrait</h1>
+            <div>
+              <div>
+                <strong>Andrew Alfred</strong>
+              </div>
+              <p className='h-14'>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id='animaux'
+          className='flex flex-col items-center justify-center bg-blue-300'>
+          <div>
+            <h1 className='sticky top-0 text-8xl'>Animaux</h1>
+            <div>
+              <div>
+                <strong>Bob Alfred</strong>
+              </div>
+              <p className='h-14'>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id='mariage'
+          className='flex flex-col items-center justify-center bg-green-300'>
+          <div>
+            <h1 className='sticky top-0 text-8xl'>Mariage</h1>
+            <div>
+              <div>
+                <strong>Bob Alfred</strong>
+              </div>
+              <p className='h-14'>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id='divers'
+          className='flex flex-col items-center justify-center bg-yellow-300'>
+          <div>
+            <h1 className='sticky top-0 text-8xl'>Divers</h1>
+            <div>
+              <div>
+                <strong>Bob Alfred</strong>
+              </div>
+              <p className='h-14'>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+              <p>Some content</p>
+            </div>
+          </div>
+        </section> */
+}
