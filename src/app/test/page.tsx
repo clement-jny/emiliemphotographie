@@ -1,7 +1,7 @@
 'use client';
 
 import './style.css';
-import { Layout } from './layout';
+import Layout from './layout';
 import Image from 'next/image';
 
 const TestPage = () => {
@@ -38,11 +38,15 @@ const TestPage = () => {
             {/* Add your images here */}
             <Image
               className='m-[10px] max-w-full'
+              width={200}
+              height={200}
               src='/placeholder.jpg'
               alt='Image 1'
             />
             <Image
               className='m-[10px] max-w-full'
+              width={200}
+              height={200}
               src='/image2.jpg'
               alt='Image 2'
             />
@@ -54,11 +58,15 @@ const TestPage = () => {
             {/* Add your images here */}
             <Image
               className='m-[10px] max-w-full'
+              width={200}
+              height={200}
               src='/image3.jpg'
               alt='Image 3'
             />
             <Image
               className='m-[10px] max-w-full'
+              width={200}
+              height={200}
               src='/image4.jpg'
               alt='Image 4'
             />

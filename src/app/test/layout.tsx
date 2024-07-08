@@ -5,7 +5,7 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-export const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
   const [scrollY, setScrollY] = useState<number>(0);
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export const Layout = ({ children }: LayoutProps) => {
     </div>
   );
 };
+
+export default Layout;
