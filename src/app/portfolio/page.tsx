@@ -1,12 +1,11 @@
-'use client';
+// 'use client';
 
 import { SharedLayout } from '@/components/shared-layout';
 import { Button } from '@/components/ui/button';
 import { GallerySection } from '@/components/gallery-section';
-import Image from 'next/image';
 
 import Link from 'next/link';
-import { useEffect, useRef, useState } from 'react';
+// import { useEffect, useRef, useState } from 'react';
 
 const PortfolioPage = () => {
   //   const pathname = usePathname();
@@ -190,12 +189,12 @@ const PortfolioPage = () => {
       </div> */}
 
       <main>
-        {/* <GallerySection text='portrait' side='left' theme='portrait' />
-        <GallerySection text='animaux' side='right' theme='animaux' />
-        <GallerySection text='mariage' side='left' theme='mariage' />
-        <GallerySection text='divers' side='right' theme='divers' /> */}
+        <GallerySection text='Portrait' folder='portrait' />
+        <GallerySection text='Animaux' folder='animaux' />
+        <GallerySection text='Mariage' folder='mariage' />
+        <GallerySection text='Divers' folder='divers' />
 
-        <div className='grid auto-rows-[192px] grid-cols-3 gap-4'>
+        {/* <div className='grid auto-rows-[192px] grid-cols-3 gap-4'>
           {[...Array(7)].map((_, i) => (
             <div
               key={i}
@@ -203,91 +202,10 @@ const PortfolioPage = () => {
                 i === 3 || i === 6 ? 'col-span-2' : ''
               }`}></div>
           ))}
-        </div>
+        </div> */}
 
-        <section>
+        {/* <section>
           <h1 className='sticky top-0 z-10 w-[50%] text-8xl'>Portrait</h1>
-          <div className='grid w-[50%] grid-cols-3 gap-5'>
-            <Image
-              src='/placeholder.jpg'
-              width={0}
-              height={0}
-              alt='Image 1'
-              className='col-span-2 size-20'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={500}
-              height={500}
-              alt='Image 2'
-              className='row-span-2'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 3'
-              className='col-span-2 row-span-2'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 4'
-              className='large'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 5'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 6'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 1'
-              className='wide'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 2'
-              className='tall'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 3'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 4'
-              className='large'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 5'
-            />
-            <Image
-              src='/placeholder.jpg'
-              width={200}
-              height={200}
-              alt='Image 6'
-            />
-          </div>
           <div>
             <p>
               More content... Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -578,7 +496,7 @@ const PortfolioPage = () => {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </SharedLayout>
   );
