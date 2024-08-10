@@ -1,19 +1,30 @@
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Milonga } from 'next/font/google';
-import './globals.css';
+import '@/app/globals.css';
+import { ThemeProvider } from '@/components/theme-provider';
 
-const inter = Milonga({ weight: ['400'], subsets: ['latin'] });
+const milonga = Milonga({ weight: ['400'], subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Accueil - EmilieM Photographie',
   description: 'EmilieM Photographie - Photographe à Lille',
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang='fr'>
-      <body className={inter.className}>{children}</body>
+    <html lang='fr' className='scroll-smooth'>
+      <body className={milonga.className}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;
