@@ -8,7 +8,10 @@ type RouteProps = {
   };
 };
 
-export const GET = async (request: NextRequest, { params: { folder } }) => {
+export const GET = async (
+  request: NextRequest,
+  { params: { folder } }: RouteProps,
+) => {
   const imagesDirectory = path.join(process.cwd(), 'public', folder);
 
   if (!folder) {

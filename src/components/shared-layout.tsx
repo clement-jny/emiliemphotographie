@@ -6,6 +6,7 @@ export const SharedLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
       <Header />
+
       {children}
 
       <BackToTop />

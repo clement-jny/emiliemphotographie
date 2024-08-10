@@ -20,13 +20,13 @@ const LandingPage = () => {
         <Separator orientation='vertical' className='mx-2' />
 
         <Button variant='link' className='text-white' asChild>
-          <Link href='/a-propos'>À propos</Link>
+          <Link href='/about'>À propos</Link>
         </Button>
 
         <Separator orientation='vertical' className='mx-2' />
 
         <Button variant='link' className='text-white' asChild>
-          <Link href='/tarif'>Tarif</Link>
+          <Link href='/price'>Tarif</Link>
         </Button>
 
         <Separator orientation='vertical' className='mx-2' />

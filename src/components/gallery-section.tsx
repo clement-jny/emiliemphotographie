@@ -5,18 +5,9 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Gallery } from '@/ts/types/gallery.types';
 
-type GallerySectionProps = {
-  text: string;
-  folder: string;
-};
-
-export const GallerySection = ({ text, folder }: GallerySectionProps) => {
-  //   const images: string[] = [
-  //     '/divers/Balade- Emilie WEB-3.jpg',
-  //     '/divers/Balade- Emilie WEB-10.jpg',
-  //   ];
-
+export const GallerySection = ({ text, folder }: Gallery) => {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
@@ -40,13 +31,13 @@ export const GallerySection = ({ text, folder }: GallerySectionProps) => {
   }, [folder]);
 
   return (
-    <section id={`${text}`} className='h-full bg-red-300 pt-10'>
-      <h1 className='sticky top-0 z-10 w-[50%] text-8xl'>{text}</h1>
+    <section id={`${text.toLowerCase()}`} className='h-full bg-red-300 p-2'>
+      <h1 className='mb-1 text-8xl'>{text}</h1>
 
       <div className='grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-5'>
         {/* grid grid-cols-5 grid-rows-4 gap-4 */}
         {images.map((src, index) => (
-          <div key={index} className='border-2'>
+          <div key={index} className=''>
             <Image
               src={src}
               alt={`Image ${index + 1}`}
@@ -174,181 +165,3 @@ export const GallerySection = ({ text, folder }: GallerySectionProps) => {
     </section>
   );
 };
-
-{
-  /* <section
-          id='portrait'
-          className='flex flex-col items-center justify-center bg-red-300'>
-          <div>
-            <h1 className='sticky top-0 text-8xl'>Portrait</h1>
-            <div>
-              <div>
-                <strong>Andrew Alfred</strong>
-              </div>
-              <p className='h-14'>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id='animaux'
-          className='flex flex-col items-center justify-center bg-blue-300'>
-          <div>
-            <h1 className='sticky top-0 text-8xl'>Animaux</h1>
-            <div>
-              <div>
-                <strong>Bob Alfred</strong>
-              </div>
-              <p className='h-14'>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id='mariage'
-          className='flex flex-col items-center justify-center bg-green-300'>
-          <div>
-            <h1 className='sticky top-0 text-8xl'>Mariage</h1>
-            <div>
-              <div>
-                <strong>Bob Alfred</strong>
-              </div>
-              <p className='h-14'>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-            </div>
-          </div>
-        </section>
-
-        <section
-          id='divers'
-          className='flex flex-col items-center justify-center bg-yellow-300'>
-          <div>
-            <h1 className='sticky top-0 text-8xl'>Divers</h1>
-            <div>
-              <div>
-                <strong>Bob Alfred</strong>
-              </div>
-              <p className='h-14'>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-              <p>Some content</p>
-            </div>
-          </div>
-        </section> */
-}
